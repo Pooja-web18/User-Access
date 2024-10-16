@@ -43,7 +43,7 @@ public class JwtGeneratorFilter extends OncePerRequestFilter {
         SecretKey key = Keys.hmacShaKeyFor(SecurityConstants.JWT_KEY.getBytes());
 
         String jwt = Jwts.builder()
-                .setIssuer("New_App")
+                .setIssuer("User Access")
                 .claim("username", authentication.getName())
                 .claim("roles", getRole(authentication.getAuthorities()))
                 .setIssuedAt(new Date())
